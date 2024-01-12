@@ -1,8 +1,12 @@
 import React from 'react'
 import { BsArrowRight } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
+import { addToCart } from '../redux/bazarSlice';
+import { useDispatch } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
 
 const ProductsCard = ({product}) => {
+    const dispatch = useDispatch()
     const navigate = useNavigate();
     const _id = product.title;
     const idString =(_id)=>{
@@ -37,7 +41,18 @@ const ProductsCard = ({product}) => {
             <p className='line-through text-gray-500'>${product.oldPrice}</p>
             <p className='font-semibold'>${product.price}</p>
             </div>
-            <p className='absolute z-20 w-[100px] text-gray-500
+            <p 
+            onClick={()=> dispatch(addToCart({
+                _id: product._id,
+                title: product.title,
+                image: product.image,
+                price: product.price,
+                quantity: 1,
+                description: product.description
+
+            }))& toast.success(`${product.title}is added`)} 
+            
+            className='absolute z-20 w-[100px] text-gray-500
              hover:text-gray-900 fle items-center gap-1 top-0 
              transform -translate-x-32 group-hover:translate-x-0 transition-transform 
              cursor-pointer duration-500'> add to cart <span><BsArrowRight/></span></p>
@@ -48,6 +63,18 @@ const ProductsCard = ({product}) => {
        </div>
        <div className='absolute top-4 right-0'>{product.isNew && <p className='bg-black text-white font-semibold font-titleFont px-6 py-1'>Sale</p>}</div>
         </div>
+        <ToastContainer
+      position="top-left"
+      autoClose={2000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme='dark'
+    />
     </div>
   )
 }
