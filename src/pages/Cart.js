@@ -19,7 +19,7 @@ const Cart = () => {
     <div>
       <img 
       className='w-full h-60 object-cover'
-      src="https://mysutro.com/cdn/shop/articles/ezgif.com-gif-maker-6.webp?v=1688473288&width=1500"
+      src="https://dlcdnwebimgs.asus.com/files/media/0e92cabf-067b-433c-a590-abdf68c9e029/v1/img/kv.jpg"
       alt="cartImg"
       />
       <div className='max-w-screen-xl mx-auto py-20 flex'>

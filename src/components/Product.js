@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { MdOutlineStar } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { addToCart } from '../redux/bazarSlice';
 import { ToastContainer, toast } from 'react-toastify';
+import { HiOutlineArrowLeft } from 'react-icons/hi';
 
 const Product = () => {
     const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const Product = () => {
     <div className='max-w-screen-xl mx-auto my-10 flex gap-10'>
 <div className='w-2/5 relative'>
     <img 
-    className='w-full h-[550px] object-cover'
+    className='w-full h-100 object-cover'
     src={details.image}
     alt="productImg"
     />
@@ -88,8 +89,20 @@ const Product = () => {
    <p className='text-base text-gray-500' >Catagory:{" "} 
    <span className='font-medium capitalize'>{details.category}</span> 
    </p>
-
+   <div>
+   <Link to="/">
+                <button 
+                className='mt-8 ml-7 flex items-center gap-1 
+                 text-gray-400 hover:text-black duration-300'>
+                <span>
+                    <HiOutlineArrowLeft />
+                </span>
+                go shopping
+                </button>
+            </Link>
+            </div>
 </div>
+
     </div>
     <ToastContainer
       position="top-left"

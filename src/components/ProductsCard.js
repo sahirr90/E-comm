@@ -23,7 +23,7 @@ const ProductsCard = ({product}) => {
   };
     return (
     <div className='group relative'>
-        <div onClick={handleDetails} className='w-full h-96 cursor-pointer overflow-hidden'>
+        <div onClick={handleDetails} className='w-full h-56 cursor-pointer overflow-hidden'>
             <img
             className='w-full h-full object-cover group-hover:scale-110 duration-500'
             src={product.image} 
@@ -37,7 +37,7 @@ const ProductsCard = ({product}) => {
             </h2>
         </div>
         <div className='flex justify-end gap-2 relative overflow-hidden w-28 text-sm'>
-            <div className='flex gap-2 transform group-hover:translate-x-24 transition-transform duration-500'>
+            <div className='flex gap-2 transform group-hover:translate-x-28 transition-transform duration-500'>
             <p className='line-through text-gray-500'>${product.oldPrice}</p>
             <p className='font-semibold'>${product.price}</p>
             </div>

@@ -19,7 +19,7 @@ const Footer = () => {
  {/* LogoIcon*/}
  <div className='flex flex-col gap-7'>
     <img className='flex flex-col gap-9 w-32' src={logo2} alt='sneakerLogo' />
-    <p className='text-white text-sm tracking-wide'> Sneakers.com</p>
+    <p className='text-white text-sm tracking-wide'> Computer.com</p>
    
     <div className='flex gap-5 text-lg text-gray-400'>
         <ImGithub className="hover:text-white duration-300 cursor-pointer"/>
@@ -34,7 +34,7 @@ const Footer = () => {
     <div>
         <p>wilmington, de 19805</p>
         <p>phone: 333-333-3333</p>
-        <p>e-mail: sneaker@gmail.com</p>
+        <p>e-mail: Computer@gmail.com</p>
     </div>
     </div>
 

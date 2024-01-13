@@ -6,9 +6,9 @@ const Banner = () => {
     const[currentSlide, setCurrentSlide] = useState(0)
     const data = [
     
-        "https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blt8db79eb55d9495d6/659d8d060e30da79bf24b999/Stanley_Tumbler_-_Arctic_Twist_Release_1_9Primary_Desktop_copy.jpg?quality=75&auto=webp&format=pjpg&dpr=2&width=1246" ,
-        "https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blt1e1be02831e2e237/659c4f4d1a81668129b0bb0a/Trending_WatchesPrimary_Desktop.jpg?quality=80&auto=webp&format=pjpg&dpr=1&width=1246",
-        "https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/bltbbb000cbcbbdfa62/659c4ddabe5d26662665b0de/3-Day_Xpress_Shipping_on_JordansPrimary_Desktop_copy_4_(1).jpg?quality=75&auto=webp&format=pjpg&dpr=2&width=1246"
+        "https://dlcdnwebimgs.asus.com/gain/5F8FB5BC-DF50-47B2-AA83-827C1EB74C5A/w5120/h1554//fwebp" ,
+        "https://dlcdnwebimgs.asus.com/gain/9C72EC0C-0655-47C8-A35E-183D82702F48/w2560/h777//fwebp",
+        "https://dlcdnwebimgs.asus.com/gain/08E9FD3D-3667-42C6-AB90-1680EB7BAE44/w2560/h777/fwebp"
     ];
 
     const prevSlide =()=>{
@@ -19,7 +19,7 @@ const Banner = () => {
     }; 
   return (
     <div className='w-full h-auto overflow-x-hidden'>
-        <div className='w-screen-h-[650px]relative'>
+        <div className='w-screen-h-[650px]fixed'>
             <div style={{transform: `translateX(-${currentSlide * 100}vw)`}} 
             className='w-[400vw] h-full flex transition-transform duration-1000'>
                 <img className='w-screen h-full object-cover'
@@ -36,7 +36,7 @@ const Banner = () => {
                 />
                  
             </div>
-            <div className='absolute w-fit left-0 right-0 mx-auto flex gap-8 bottom-80'>
+            <div className='relative w-fit left-0 right-0 mx-auto flex gap-8 bottom-20'>
             <div onClick={prevSlide} className='w-14 h-12 border-[1px] border-gray-700 flex items-center justify-center hover:cursor-pointer hover:bg-gray-700 hover:text-white active:bg-grey-900 duration-300 '>
                 <HiArrowLeft/>
             </div>
